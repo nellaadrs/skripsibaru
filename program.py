@@ -1334,7 +1334,7 @@ if st.session_state["smote_option"] and not st.session_state["main_select"]:
                         # st.write( data_baru_normalisasi)
                         
                         prediksi_rbf = klasif_rbf.predict(data_baru_normalisasi)
-                        prediksi_linear = klasif_linear.predict(data_baru_normalisasi)
+                        #prediksi_linear = klasif_linear.predict(data_baru_normalisasi)
                         
                         kolom_fitur = ["age","sex","TSH","T3","FT4","T4","FTI","TBG","patient_id"]
                         df_data_baru = pd.DataFrame(data_baru, columns=kolom_fitur)
