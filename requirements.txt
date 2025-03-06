@@ -1,12 +1,8 @@
 numpy
-pandas
-scikit-learn
-joblib
-counter
 streamlit
-streamlit_option_menu
-matplotlib
 seaborn
-plotly
-imblearn
-counter
+matplotlib
+pandas
+joblib
+scikit-learn
+time
