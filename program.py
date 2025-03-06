@@ -1290,7 +1290,7 @@ if st.session_state["smote_option"] and not st.session_state["main_select"]:
 
             with klasifikasi:
                 klasif_rbf = load('rbf_dengan_ig.pkl')
-                klasif_linear = load('linear_dengan_ig.pkl')
+                #klasif_linear = load('linear_dengan_ig.pkl')
                 
                 with st.form("form_input"):
                     st.subheader("Masukkan Data Pasien")
