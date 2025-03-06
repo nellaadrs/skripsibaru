@@ -6,4 +6,6 @@ pandas
 joblib
 scikit-learn
 imbalanced-learn
+streamlit_option_menu
+
 
