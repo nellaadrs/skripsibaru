@@ -5,5 +5,5 @@ matplotlib
 pandas
 joblib
 scikit-learn
-time
-imb-learn
+imbalanced-learn
+
