@@ -765,11 +765,13 @@ if st.session_state["smote_option"] and not st.session_state["main_select"]:
         for column in kolom_label:
             dataset[column] = label_encod.fit_transform(dataset[column])
         dataset["target"] = label_encod.fit_transform(dataset["target"])
+        dump(label_encod, "label_encoder.pkl") 
     
         #imputasi
         kolom = ["sex", "TSH", "T3", "FT4", "T4", "FTI", "TBG"]
         imputer = KNNImputer(n_neighbors=3)
         dataset[kolom] = imputer.fit_transform(dataset[kolom])
+        dump(imputer, "imputer.pkl")
         
         X = dataset.drop(columns=["target"])
         y = dataset["target"]
@@ -777,6 +779,7 @@ if st.session_state["smote_option"] and not st.session_state["main_select"]:
         scaler = MinMaxScaler()
         X[kolom_numerik] = scaler.fit_transform(X[kolom_numerik])
         dataset = pd.concat([X, y], axis=1)
+        dump(scaler, "scaler.pkl")
 
         with smote:
             test = st.slider("Jumlah Data Testing :",0.0,1.0,0.9 ,step=0.1)
@@ -1342,7 +1345,7 @@ if st.session_state["smote_option"] and not st.session_state["main_select"]:
                             st.success("Pasien tidak terkena penyakit tiroid")
                         elif prediksi_rbf[0] == 1:
                             st.success("Pasien terkena hipertiroid")
-                        if prediksi_rbf[0] == 2:
+                        else:
                             st.success("Pasien terkena hipotiroid")
                         
 
